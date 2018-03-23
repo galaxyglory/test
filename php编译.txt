@@ -1,0 +1,113 @@
+./configure
+    --sbin-path=/usr/local/nginx/nginx
+    --conf-path=/usr/local/nginx/nginx.conf
+    --pid-path=/usr/local/nginx/nginx.pid
+    --with-http_ssl_module
+    --with-pcre=../pcre-8.41
+    --with-zlib=../zlib-1.2.11
+	
+./configure \
+--prefix=/app/nginx-1.12.2 \
+--user=nginx \
+--group=nginx \
+--with-http_ssl_module \
+--with-http_stub_status_module
+	
+
+	
+	server {
+        listen       80;
+        server_name  blog.galaxy.com;
+
+        location / {
+            root   html/blog;
+            index  index.html index.htm;
+        }
+    }
+
+	
+./configure \
+--prefix=/app/php5.6.33 \
+--enable-mysqlnd \
+--with-pdo-mysql=mysqlnd \
+--with-mysqli=mysqlnd \
+--with-iconv-dir=/usr/local/libiconv \
+--with-freetype-dir \
+--with-jpeg-dir \
+--with-png-dir \
+--with-zlib \
+--with-libxml-dir=/usr \
+--enable-xml \
+--disable-rpath \
+--enable-safe-mode \
+--enable-bcmath \
+--enable-shmop \
+--enable-sysvsem \
+--enable-inline-optimization \
+--with-curl \
+--with-curlwrappers \
+--enable-mbregex \
+--enable-fpm \
+--enable-mbstring  \
+--with-mcrypt \
+--with-gd \
+--enable-gd-native-ttf \
+--with-openssl \
+--with-mhash \
+--with-pcntl \
+--enable-sockets \
+--with-xmlrpc \
+--enable-zip \
+--enable-soap \
+--enable-short-tags \
+--enable-zend-multibyte \
+--enable-static \
+--with-xsl \
+--with-fpm-user=nginx \
+--with-fpm-group=nginx \
+--enable-ftp
+
+--enable-safe-mode, --with-curlwrappers, --with-pcntl, --enable-zend-multibyte
+
+
+#  ./configure \  
+--enable-inline-optimization \  
+--disable-debug \  
+--disable-rpath \  
+--enable-shared \  
+--enable-opcache \  
+--enable-fpm \  
+--with-mysql \  
+--with-mysqli \  
+--with-pdo-mysql \  
+--with-gettext \  
+--enable-mbstring \  
+--with-iconv \  
+--with-mcrypt \  
+--with-mhash \  
+--with-openssl \  
+--enable-bcmath \  
+--enable-soap \  
+--with-libxml-dir \  
+--enable-pcntl \  
+--enable-shmop \  
+--enable-sysvmsg \  
+--enable-sysvsem \  
+--enable-sysvshm \  
+--enable-sockets \  
+--with-curl \  
+--with-zlib \  
+--enable-zip \  
+--with-bz2 \  
+--with-readline  
+
+
+		location ~ \.php$ {
+		root /www;
+		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME /www$fastcgi_script_name;
+		include fastcgi_params;
+		}
+		
+CREATE DATABASE IF NOT EXISTS wordpress default charset utf8 COLLATE utf8_general_ci; 

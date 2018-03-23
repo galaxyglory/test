@@ -1,0 +1,40 @@
+SQL> select to_char(systimestamp,'yyyy-mm-dd hh24:mi:ssxff6') from dual;
+
+TO_CHAR(SYSTIMESTAMP,'YYYY-MM
+-----------------------------
+2019-01-07 23:07:24.375378
+
+
+SQL> select to_char(sysdate,'yyyy-mm-dd hh24:mi:ss') from dual;
+
+TO_CHAR(SYSDATE,'YY
+-------------------
+2019-01-07 23:05:50
+
+
+
+字符
+char(1~2000字节)	varchar	varchar2(1~4000字节)	nchar 
+
+数字
+number(-10E+38 ~ +10E+38)
+
+日期
+date	timestamp
+
+RAW/LONG RAW(存储二进制数据)
+
+LOB
+CLOB(存储字符LOB) BLOB(存储二进制LOB) BFILE(Binary File,二进制文件(指针),用于将二进制数据存储在数据库外部的操作系统文件中)
+
+伪列
+ROWID	ROWNUM(分页)
+
+
+数据定义语言
+create table	alter table		truncate table		drop table
+
+truncate table(包含提交操作，不写日志)
+delete tables((不包含提交操作，写日志))
+
+在不识别字符的OS环境中，SQLPLUS插入数据为乱码
