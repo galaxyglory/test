@@ -1,8 +1,13 @@
-mysql安装与基本配置
 
 
--- MySQL修改密码
+MySQL修改密码
+
+```mysql  
+
 mysqladmin -uroot -pgalaxy password 'oracle';
+```
+
+
 
 -- mysql 查看已安装的编译参数
 -- mysql 5.5
