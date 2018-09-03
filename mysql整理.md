@@ -7,7 +7,9 @@ MySQL修改密码
 mysqladmin -uroot -pgalaxy password 'oracle';
 ```
 
+MySQL分片策略
 
+在一个服务器中保留多个分片，当一个服务器负载较高时，将分片迁移至其他服务器
 
 -- mysql 查看已安装的编译参数
 -- mysql 5.5
